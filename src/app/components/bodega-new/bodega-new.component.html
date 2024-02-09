@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-mb-2">
+      <ng-form [formGroup]="formBodega">
+        <h2>New bottle</h2>
+        <div class="form-floating-mb3">
+          <input type="text" class="form-control" formControlName="nombre" id="nombre" placeholder="nombre">
+          <label for="nombre"></label>
+          <div *ngIf="nombre?.invalid && (nombre?.touched || nombre?.dirty)" class="alert alert-warning bg-warning">
+            <div *ngIf="nombre?.errors?.['required']">
+              El nombre es obligatorio.
+            </div>
+            <div *ngIf="nombre?.errors?.['notOnlyWhiteSpace']">
+              El nombre no pueden ser sólo espacios en blanco.
+            </div>
+            <div *ngIf="nombre?.errors?.['minlength']">
+              El nombre tiene que tener al menos 5 caracteres.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-floating-mb3">
+          <input type="text" class="form-control" formControlName="imagen" id="imagen" placeholder="imagen">
+          <label for="imagen"></label>
+          <div *ngIf="imagen?.invalid && (imagen?.touched || imagen?.dirty)" class="alert alert-warning bg-warning">
+            <div *ngIf="imagen?.errors?.['required']">
+              La imagen es obligatorio.
+            </div>
+            <div *ngIf="imagen?.errors?.['notOnlyWhiteSpace']">
+              La imagen no pueden ser sólo espacios en blanco.
+            </div>
+            <div *ngIf="imagen?.errors?.['minlength']">
+              La imagen tiene que tener al menos 6 caracteres.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-floating-mb3">
+          <input type="text" class="form-control" formControlName="uva" id="uva" placeholder="uva">
+          <label for="uva"></label>
+          <div *ngIf="uva?.invalid && (uva?.touched || uva?.dirty)" class="alert alert-warning bg-warning">
+            <div *ngIf="uva?.errors?.['required']">
+              La uva es obligatoria.
+            </div>
+            <div *ngIf="uva?.errors?.['notOnlyWhiteSpace']">
+              La uva no pueden ser sólo espacios en blanco.
+            </div>
+            <div *ngIf="uva?.errors?.['minlength']">
+              La uva tiene que tener al menos 5 caracteres.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-floating-mb3">
+          <input type="text" class="form-control" formControlName="anyo" id="anyo" placeholder="anyo">
+          <label for="anyo"></label>
+          <div *ngIf="anyo?.invalid && (anyo?.touched || anyo?.dirty)" class="alert alert-warning bg-warning">
+            <div *ngIf="anyo?.errors?.['required']">
+              El año es obligatorio
+            </div>
+            <div *ngIf="anyo?.errors?.['min']">
+              El año mínimo es 1900
+            </div>
+            <div *ngIf="anyo?.errors?.['max']">
+              El anyo máximo es 2024
+            </div>
+          </div>
+        </div>
+
+        <div class="form-floating-mb3">
+          <input type="text" class="form-control" formControlName="precio" id="precio" placeholder="precio">
+          <label for="precio"></label>
+          <div *ngIf="precio?.invalid && (precio?.touched || precio?.dirty)" class="alert alert-warning bg-warning">
+            <div *ngIf="precio?.errors?.['required']">
+              El precio es obligatorio
+            </div>
+            <div *ngIf="precio?.errors?.['min']">
+              El precio tiene que ser positivo.
+            </div>
+          </div>
+        </div>
+
+      </ng-form>
+
+      <div class="d-flex justify-content-center">
+        <button class="btn btn-success" (click)="insertar()">
+          Create
+        </button>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <h2>Preview</h2>
+      <div class="card mb-3">
+        <div class="row g-0">
+
+          <div class="col-md-4">
+            <img [src]="imagen?.value" [alt]="nombre?.value" class="img-fluid rounded-start" >
+          </div>
+          <div class="col-md-8">
+            <div class="card-header">
+              <div class="card-title">
+                <h2>{{nombre?.value}}</h2>
+              </div>
+              <div class="card-subtitle">
+                {{uva?.value}}
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="text-primary">{{anyo?.value}}</p>
+            </div>
+            <div class="card-footer d-flex align-items-baseline">
+              <p class="bg-success badge">{{precio?.value | currency:'EUR'}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

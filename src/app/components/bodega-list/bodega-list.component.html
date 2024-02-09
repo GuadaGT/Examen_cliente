@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let botella of listaBodega">
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img [src]="botella.imagen" [alt]="botella.nombre" class="img-fluid rounded-start" >
+          </div>
+          <div class="col-md-8">
+            <div class="card-header">
+              <div class="card-title">
+                <h2>{{botella.nombre}}</h2>
+              </div>
+              <div class="card-subtitle">
+                {{botella.uva}}
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="text-primary">{{botella.anyo}}</p>
+            </div>
+            <div class="card-footer d-flex align-items-baseline">
+              <p class="bg-success badge">{{botella.precio | currency:'EUR'}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

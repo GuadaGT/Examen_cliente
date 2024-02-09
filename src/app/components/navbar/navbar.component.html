@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid bg-black">
+    <a class="navbar-brand" routerLink="inicio" class="text-white" >Wine App</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" routerLink="inicio" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Wine
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="bodega/new">New Wine bottle</a></li>
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="bodega">New Bottle List</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

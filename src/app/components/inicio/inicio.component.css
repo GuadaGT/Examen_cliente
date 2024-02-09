@@ -1,0 +1,11 @@
+.img:hover{
+  cursor:pointer;
+  border: solid grey;
+  transform:scale(200%);
+
+}
+
+.img{
+  width: 400px;
+  height: 300px;
+}

@@ -1,0 +1,12 @@
+.page-item:hover{
+  cursor: pointer;
+}
+
+.card:hover{
+  cursor:pointer;
+  border: solid #6e0f22;
+  transform:scale(105%);
+}
+.card-img{
+  scale: inherit;
+}
